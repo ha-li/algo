@@ -3,14 +3,11 @@ package com.gecko.algorithms.merge;
 import org.junit.Assert;
 import org.junit.Test;
 
-// hello worls
-public class MergeSortTest {
+import com.gecko.algorithms.order.ArrayOrder;
 
-	private static void assertIntegerArrayEquals(Integer[] expected, Integer[] actual) {
-		for(int i = 0; i < expected.length; i++) {
-			Assert.assertEquals(expected[i], actual[i]);
-		}
-	}
+// hello worls
+public class MergeSortTest extends ArrayOrder{
+
 
 	@Test
 	public void arraySize0Test() {
