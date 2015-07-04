@@ -1,5 +1,7 @@
 package com.gecko.algorithms.sortcompare;
 
+import java.lang.reflect.Array;
+
 import com.gecko.algorithms.sort.InsertionSort;
 import com.gecko.algorithms.sort.SelectionSort;
 import com.gecko.stopwatch.StopWatch;
@@ -7,8 +9,9 @@ import com.gecko.util.StdRandom;
 
 public class SortCompare {
 
-	public static <T> Comparable<T>[] copy(Comparable<T>[] toCopy) {
-		Comparable<T> [] duplicate = new Comparable[toCopy.length];
+	public static <T extends Comparable<T>> T[] copy(T[] toCopy) {
+		// if(toCopy[0].isAssignableFrom(toCopy[0].getClass()))
+		T[] duplicate = (T[]) Array.newInstance(toCopy[0].getClass(), toCopy.length);
 		for(int i = 0; i < toCopy.length; i++) {
 			duplicate[i] = toCopy[i];
 		}
@@ -18,8 +21,8 @@ public class SortCompare {
 	public static void sortCompare() {
 		int N = 150;
 		
-		Comparable<Integer>[] ints = StdRandom.populateI(N, 0, 100);
-		Comparable<Integer>[] dup = copy(ints);
+		Integer[] ints = StdRandom.populateI(N, 0, 100);
+		Integer[] dup = copy(ints);
 	
 		StopWatch stopWatch = new StopWatch();
 		double start = stopWatch.time();

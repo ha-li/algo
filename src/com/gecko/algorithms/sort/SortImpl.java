@@ -28,7 +28,7 @@ package com.gecko.algorithms.sort;
  * Note: this is all hypothetical fiction...
  * 
  */
-public class SortImpl<T> extends BaseSort {
+public class SortImpl<T extends Comparable<T>> extends BaseSort {
 	
 	private static final int THRESHOLD = 100000;
 
@@ -40,7 +40,7 @@ public class SortImpl<T> extends BaseSort {
 	}
 	
 	// sort implementation
-	public static <T> void sort(Comparable<T>[] comparables) {
+	public static <T extends Comparable<T>> void sort(T[] comparables) {
 
 		// we can switch from variable threshold
 		// to static threshold by using method setSwitchable
@@ -54,7 +54,7 @@ public class SortImpl<T> extends BaseSort {
 	// Newburger et al (1980) proved that the optimal sort
 	// to use is insertion sort when the size is more then 100K
 	// and below that use selection sort
-	public static <T> boolean static_sort(Comparable<T>[] comparables) {
+	public static <T extends Comparable<T>> boolean static_sort(T[] comparables) {
 		// threshold is the magic 
 		if(comparables.length > THRESHOLD) { 
 			InsertionSort.sort(comparables);
@@ -73,7 +73,7 @@ public class SortImpl<T> extends BaseSort {
 	// Lieu et al (2015) found a flaw in Newburger's proof that 
 	// 100K is not the threshold. Now you can set your own threshold
 	// by using variable_sort and make use of it using variable_sort
-	private static <T> boolean variable_sort(Comparable<T>[] comparables) {
+	private static <T extends Comparable<T>> boolean variable_sort(T[] comparables) {
 		if(comparables.length > VARIABLE_THRESHOLD) {
 			InsertionSort.sort(comparables);
 		} else {

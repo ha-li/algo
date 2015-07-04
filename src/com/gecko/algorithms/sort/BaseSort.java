@@ -8,12 +8,11 @@ public class BaseSort {
 		comparables[_y] = _t;
 	}
 	
-	@SuppressWarnings("unchecked")
-	public static <T> boolean isLess(Comparable _this, Comparable _that) {
+	public static <T extends Comparable<T>> boolean isLess(T _this, T _that) {
 		return _this.compareTo(_that) < 0;
 	}
 	
-	public static <T> boolean isGreater(Comparable _this, Comparable _that) {
+	public static <T extends Comparable<T>> boolean isGreater(T _this, T _that) {
 		return _this.compareTo(_that) > 0;
 	}
 

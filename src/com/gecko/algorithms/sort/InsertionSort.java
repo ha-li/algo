@@ -2,7 +2,7 @@ package com.gecko.algorithms.sort;
 
 public class InsertionSort extends BaseSort {
 	
-	public static <T> void sort(Comparable<T>[] comparables) {
+	public static <T extends Comparable<T>> void sort(T[] comparables) {
 		
 		for(int i = 1; i < comparables.length; i++) {
 			for(int j = i; j > 0; j--) {

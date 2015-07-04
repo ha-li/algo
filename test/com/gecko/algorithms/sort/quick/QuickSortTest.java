@@ -6,10 +6,11 @@ import org.junit.Test;
 
 import com.gecko.algorithms.order.ArrayOrder;
 import com.gecko.algorithms.sort.QuickSort;
+import com.gecko.algorithms.sort.SortValidation;
 
 public class QuickSortTest extends ArrayOrder{
 
-	private static <T> boolean isPartitioned(Comparable<T>[] comparables, int partition) {
+	private static <T extends Comparable<T>> boolean isPartitioned(T[] comparables, int partition) {
 		for(int i = 0; i < comparables.length; i++) {
 			if(i < partition) {
 				if(isLess(comparables[partition], comparables[i])) {
@@ -31,7 +32,7 @@ public class QuickSortTest extends ArrayOrder{
 		Integer[] ints = new Integer[0];
 		int i = QuickSort.partition(ints, 0, 0);
 		
-		Integer[] expected = {};
+		//Integer[] expected = {};
 		Assert.assertTrue(isPartitioned(ints, i));
 	}
 	
@@ -103,5 +104,23 @@ public class QuickSortTest extends ArrayOrder{
 		
 		System.out.println("partition=" + i + ", array=" + QuickSort.toString(ints));
 		Assert.assertTrue(isPartitioned(ints, i));
+	}
+	
+	@Test
+	public void quickSortThreeUnsortedTest() {
+		Integer[] ints = new Integer[] {9, 8, 2};
+		QuickSort.sort(ints);
+		
+		System.out.println("sorted array=" + QuickSort.toString(ints));
+		Assert.assertTrue(SortValidation.isSorted(ints));
+	}
+	
+	@Test
+	public void sortThreeUnsortedTest2() {
+		Integer[] ints = new Integer[] {7, 8, 5};
+		QuickSort.sort(ints);
+		
+		System.out.println("sorted array=" + QuickSort.toString(ints));
+		Assert.assertTrue(SortValidation.isSorted(ints));
 	}
 }

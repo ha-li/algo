@@ -9,7 +9,7 @@ public class ArrayOrder {
 		}
 	}
 	
-	protected static boolean isLess(Comparable a, Comparable b) {
+	protected static <T extends Comparable<T>> boolean isLess(T a, T b) {
 		return a.compareTo(b) < 0;
 	}
 }

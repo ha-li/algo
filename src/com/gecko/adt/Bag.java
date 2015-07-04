@@ -1,6 +1,6 @@
 package com.gecko.adt;
 
-public class Bag<T> {
+public class Bag<T extends Comparable<T>> {
 	
 	
 	private class Node {

@@ -1,11 +1,13 @@
 package com.gecko.algorithms.merge;
 
+import java.lang.reflect.Array;
+
 public class Merge {
 	
-	public static <T> void merge(Comparable<T>[] comparables, int lo, int mid, int high) {
+	public static <T extends Comparable<T>> void merge(T[] comparables, int lo, int mid, int high) {
 		int _lo_idx = lo, _mid_idx = mid + 1;
 		
-		Comparable<T>[] _copy = copy(comparables);
+		T[] _copy = copy(comparables);
 
 		for(int i = lo; i <= high; i++) {
 			if ( _lo_idx > mid )   { 
@@ -29,16 +31,16 @@ public class Merge {
 	}
 	
 	
-	private static boolean less(Comparable x, Comparable y) {
+	private static <T extends Comparable<T>>boolean less(T x, T y) {
 		return x.compareTo(y) < 0;
 	}
 	
-	private static boolean greater(Comparable x, Comparable y) {
+	private static <T extends Comparable<T>>boolean greater(T x, T y) {
 		return x.compareTo(y) > 0;
 	}
 	
-	private static <T> Comparable<T>[] copy(Comparable<T>[] comparables) {
-		Comparable<T>[] _copy = new Comparable[comparables.length];
+	private static <T extends Comparable<T>> T[] copy(T[] comparables) {
+		T[] _copy = (T[]) Array.newInstance(comparables[0].getClass(),comparables.length);
 		
 		for(int i = 0; i < comparables.length; i++) {
 			_copy[i] = comparables[i];
@@ -47,7 +49,7 @@ public class Merge {
 		return _copy;
 	}
 	
-	public static <T> boolean isSorted(Comparable<T>[] comparables) {
+	public static <T extends Comparable<T>> boolean isSorted(T[] comparables) {
 		for(int i = 1; i < comparables.length; i++) {
 			if( greater(comparables[i-1], comparables[i]) ) {
 				return false;
