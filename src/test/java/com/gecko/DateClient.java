@@ -1,15 +1,14 @@
 package com.gecko;
 
+import java.util.Calendar;
 import java.util.Date;
 
-import java.util.Calendar;
+import org.junit.Test;
 
 public class DateClient {
 
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
+	@Test
+	public void testDate() {
 		// TODO Auto-generated method stub
 		Date d = Calendar.getInstance().getTime();
 		System.out.println(d);
@@ -25,8 +24,6 @@ public class DateClient {
 		
 		System.out.println(d);
 		System.out.println(d2);
-		
-		
 	}
 
 }

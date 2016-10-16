@@ -1,11 +1,11 @@
 package com.gecko;
 
+import org.junit.Test;
+
 public class StringClient {
 
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
+	@Test
+	public void main() {
 		// TODO Auto-generated method stub
 		String s1 = "new String";
 		String s2 = s1.concat(" gets tricky here");
