@@ -2,6 +2,7 @@ package com.gecko.algorithms.sort;
 
 import com.gecko.PrintUtils;
 import com.gecko.RandomUtils;
+import junit.framework.Assert;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -19,6 +20,7 @@ public class InsertionSortTest {
         InsertionSort.sort(ints);
         PrintUtils.display(ints);
 
+        assertTrue(SortValidation.isSorted(ints));
     }
 
 }
