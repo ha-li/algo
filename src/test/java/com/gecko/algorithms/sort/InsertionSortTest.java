@@ -21,6 +21,7 @@ public class InsertionSortTest {
         PrintUtils.display(ints);
 
         assertTrue(SortValidation.isSorted(ints));
+        
     }
 
 }
