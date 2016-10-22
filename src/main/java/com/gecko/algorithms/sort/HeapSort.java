@@ -16,7 +16,7 @@ public class HeapSort /* implements Sort */ {
         return i%2 == 0 ? i/2 - 1 : i/2;
     }
 
-    private static int left(int i) {
+    protected static int left(int i) {
         return 2*i+1;
     }
 

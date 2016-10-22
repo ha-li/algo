@@ -16,7 +16,7 @@ public class QuickSort extends BaseSort{
 
 	// 
 	public static <T extends Comparable<T>> int partition(T[] comparables, int lo, int hi) {
-		T p = comparables[lo];
+		T p = comparables[lo];   // the pivot value
 		int i = lo, j = hi+1;
 		
 		while(true) {

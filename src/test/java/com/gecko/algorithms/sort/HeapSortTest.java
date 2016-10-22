@@ -10,7 +10,7 @@ import static org.junit.Assert.*;
 /**
  * Created by hlieu on 10/21/16.
  */
-public class HeapSortTest {
+public class HeapSortTest extends HeapSort {
     @Test
     public void sort() throws Exception {
 
@@ -78,6 +78,12 @@ public class HeapSortTest {
         Integer ret = (Integer) parent.invoke(null, input);
         Assert.assertEquals( new Long(expected), new Long(ret));
 
+    }
+
+    @Test
+    public void test_private_left () {
+        int actual = HeapSort.left(5);
+        Assert.assertEquals( new Long(11), new Long(actual) );
     }
 
 }
