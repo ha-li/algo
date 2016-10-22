@@ -1,6 +1,7 @@
 package com.gecko.algorithms.merge;
 
 public class MergeSort extends Merge {
+
 	public static <T extends Comparable<T>> void sort(T[] comparables) {
 
 		sort(comparables, 0, comparables.length-1);

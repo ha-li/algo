@@ -12,7 +12,7 @@ import static org.junit.Assert.*;
  */
 public class InsertionSortTest {
 
-    @Test
+    //@Test
     public void sort() throws Exception {
         Integer[] ints = new Integer[20];
         RandomUtils.populate(ints, 1, 99);
@@ -21,7 +21,19 @@ public class InsertionSortTest {
         PrintUtils.display(ints);
 
         assertTrue(SortValidation.isSorted(ints));
-        
+    }
+
+    @Test
+    public void sort2Test() throws Exception {
+        Integer[] ints = new Integer[10];
+        RandomUtils.populate(ints, 1, 99);
+        PrintUtils.display(ints);
+        InsertionSort.sort2(ints);
+        InsertionSort.sort2(ints);
+        PrintUtils.display(ints);
+
+        assertTrue(SortValidation.isSorted(ints));
+
     }
 
 }

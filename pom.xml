@@ -23,15 +23,6 @@
         </plugins>
     </build>
 
-    <repositories>
-
-        <!-- Repository where we can found the storm dependencies  -->
-        <repository>
-            <id>clojars.org</id>
-            <url>http://clojars.org/repo</url>
-        </repository>
-
-    </repositories>
 
     <dependencies>
         <!-- https://mvnrepository.com/artifact/junit/junit -->
