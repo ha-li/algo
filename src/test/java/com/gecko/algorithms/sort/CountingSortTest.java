@@ -68,4 +68,41 @@ public class CountingSortTest {
         Integer[] ret = CountingSort.sort(input);
         Assert.assertArrayEquals(expected, ret);
     }
+
+    // @Test
+    public void test_correct_for_negatives() throws Exception {
+        Method correct = CountingSort.class.getDeclaredMethod("correct_for_negatives", Integer[].class, Integer.class, Boolean.class);
+        correct.setAccessible(Boolean.TRUE);
+        Integer[] input = {3, -5, 1};
+        Integer fudge = 0;
+        Boolean hasNegatives = Boolean.FALSE;
+        Object[] params = new Object[] {input, fudge, hasNegatives};
+
+        correct.invoke(null, params);
+        Assert.assertEquals(new Long(5), new Long(fudge));
+    }
+
+    @Test
+    public void negative_sort() throws Exception {
+        Integer[] input = {3, -5, 1};
+        Integer[] expected = {-5, 1, 3};
+        Integer[] ret = CountingSort.sort(input);
+        Assert.assertArrayEquals(expected, ret);
+    }
+
+    @Test
+    public void negative_sort2() throws Exception {
+        Integer[] input = {-6, -5, 1};
+        Integer[] expected = {-6, -5, 1};
+        Integer[] ret = CountingSort.sort(input);
+        Assert.assertArrayEquals(expected, ret);
+    }
+
+    @Test
+    public void negative_sort3() throws Exception {
+        Integer[] input = {-6, 1, 4, -2, -10, 20, 2, 1, 0, 10};
+        Integer[] expected = {-10, -6, -2, 0, 1, 1, 2, 4, 10, 20};
+        Integer[] ret = CountingSort.sort(input);
+        Assert.assertArrayEquals(expected, ret);
+    }
 }

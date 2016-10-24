@@ -12,6 +12,13 @@ public class CountingSort {
         // where we'll put the sorted results in
         Integer[] b = new Integer[a.length];
 
+        // Integer fudge_factor = 0;
+        Boolean isNegative = hasNegatives(a);
+
+        Integer fudge_factor = 0;
+        if(isNegative)
+            fudge_factor = correct_for_negatives(a);
+
         // our largest values
         int k = max(a);
 
@@ -19,7 +26,46 @@ public class CountingSort {
         _cardinal_count(aux_k, a);
 
         _final_sort(b, aux_k, a);
+
+        if(isNegative) {
+            reapplyCorrection(b, fudge_factor);
+        }
+
         return b;
+    }
+
+    private static void reapplyCorrection(Integer[] a, Integer fudge) {
+        for(int i = 0; i < a.length; i++ ) {
+            a[i] = a[i] - fudge;
+        }
+    }
+
+    private static Boolean hasNegatives(Integer[] a) {
+        Boolean isNegative = Boolean.FALSE;
+        for(int i = 0; i < a.length; i++ ) {
+            if ( a[i] < 0 ) { isNegative = Boolean.TRUE; }
+        }
+        return isNegative;
+    }
+
+    private static Integer correct_for_negatives(Integer[] a) {
+        Integer fudge = 0;
+        for(int i = 0; i < a.length; i++ ) {
+
+            if ( a[i] < fudge ) {
+                fudge = a[i];
+            }
+        }
+
+        fudge = Math.abs(fudge);
+
+        for(int i = 0; i < a.length; i++ ) {
+            a[i] = a[i] + fudge;
+        }
+
+
+        // return our correction factor
+        return fudge;
     }
 
     private static void _final_sort(Integer[] ret, int[] aux, Integer[] input) {
