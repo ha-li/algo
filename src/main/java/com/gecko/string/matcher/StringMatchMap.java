@@ -10,10 +10,11 @@ import java.util.Map;
 // O(template.length) run time
 public class StringMatchMap implements StringMatch {
 
-    private Map<String, Integer> stringMap = new HashMap<String, Integer>();
 
 
     public int match(String template, String pattern) {
+        Map<String, Integer> stringMap = new HashMap<String, Integer>();
+
         int t = template.length();
         int p = pattern.length();
 
