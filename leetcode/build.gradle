@@ -1,0 +1,8 @@
+description = 'some practices'
+
+repositories {
+   mavenCentral ()
+}
+
+dependencies {
+}
