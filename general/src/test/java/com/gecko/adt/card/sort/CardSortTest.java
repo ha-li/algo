@@ -1,10 +1,12 @@
 package com.gecko.adt.card.sort;
 
 import com.gecko.adt.card.Card;
+import org.junit.Test;
 
 public class CardSortTest {
 
-	public static void lessTest() {
+	@Test
+	public void lessTest() {
 		Card[] deck = new Card[5];
 		deck[0] = new Card(Card.Suit.DIAMOND, Card.Rank.ONE);
 		deck[1] = new Card(Card.Suit.CLUB, Card.Rank.FIVE);
@@ -17,8 +19,9 @@ public class CardSortTest {
 		System.out.println(CardSort.less(deck[2], deck[3]));
 		System.out.println(CardSort.less(deck[3], deck[4]));
 	}
-	
-	public static void topWashTest() {
+
+	@Test
+	public void topWashTest() {
 		Card[] deck = new Card[5];
 		deck[0] = new Card(Card.Suit.DIAMOND, Card.Rank.ONE);
 		deck[1] = new Card(Card.Suit.CLUB, Card.Rank.FIVE);
@@ -30,8 +33,9 @@ public class CardSortTest {
 		CardSort.topWash(deck);
 		CardSort.print(deck);
 	}
-	
-	public static void moveForwardTest() {
+
+	@Test
+	public void moveForwardTest() {
 		Card[] deck = new Card[5];
 		deck[0] = new Card(Card.Suit.DIAMOND, Card.Rank.ONE);
 		deck[1] = new Card(Card.Suit.CLUB, Card.Rank.FIVE);
@@ -45,8 +49,9 @@ public class CardSortTest {
 		System.out.println("Move Foward");
 		CardSort.print(deck);
 	}
-	
-	public static void exchangeTest() {
+
+	@Test
+	public void exchangeTest() {
 		Card[] deck = new Card[5];
 		deck[0] = new Card(Card.Suit.DIAMOND, Card.Rank.ONE);
 		deck[1] = new Card(Card.Suit.CLUB, Card.Rank.FIVE);
@@ -57,8 +62,9 @@ public class CardSortTest {
 		CardSort.exchange(deck, 3, 4);
 		CardSort.print(deck);
 	}
-	
-	public static void dequeueSortTest() {
+
+	@Test
+	public void dequeueSortTest() {
 		Card[] deck = new Card[5];
 		deck[0] = new Card(Card.Suit.DIAMOND, Card.Rank.ONE);
 		deck[1] = new Card(Card.Suit.CLUB, Card.Rank.FIVE);
@@ -69,16 +75,4 @@ public class CardSortTest {
 		System.out.println("Dequeue Sort Test");
 		CardSort.print(deck);		
 	}
-	
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		//lessTest();
-		//topWashTest();
-		//moveForwardTest();
-		//exchangeTest();
-		dequeueSortTest();
-	}
-
 }
