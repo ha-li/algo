@@ -3,8 +3,6 @@ package com.gecko.algorithms.merge;
 import com.gecko.PrintUtils;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 /**
  * Created by hlieu on 10/17/16.
  */

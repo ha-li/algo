@@ -3,8 +3,6 @@ package com.gecko.algorithms;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 /**
  * Created by hlieu on 10/24/16.
  */

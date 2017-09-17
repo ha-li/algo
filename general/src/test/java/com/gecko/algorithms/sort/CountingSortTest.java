@@ -5,8 +5,6 @@ import org.junit.Test;
 
 import java.lang.reflect.Method;
 
-import static org.junit.Assert.*;
-
 /**
  * Created by hlieu on 10/23/16.
  */

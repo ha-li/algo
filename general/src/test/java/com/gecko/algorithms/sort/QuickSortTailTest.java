@@ -7,8 +7,6 @@ import org.junit.Test;
 //import java.lang.reflect.Array;
 import java.lang.reflect.Method;
 
-import static java.sql.Types.INTEGER;
-
 
 /**
  * Created by hlieu on 10/22/16.

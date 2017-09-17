@@ -1,4 +1,4 @@
-package com.gecko.algorithms.sort;
+package  com.gecko.algorithms.sort;
 
 public class InsertionSortInt {
 	
