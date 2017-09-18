@@ -6,3 +6,6 @@ test-output
 .idea/
 target/
 *.iml
+build/
+.gradle/
+

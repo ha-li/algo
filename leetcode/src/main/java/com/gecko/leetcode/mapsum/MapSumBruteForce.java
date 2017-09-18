@@ -1,4 +1,7 @@
-package com.gecko.leetcode;
+package com.gecko.leetcode.mapsum;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * implement a map sum class with 2 methods:
@@ -18,18 +21,22 @@ package com.gecko.leetcode;
  * Input: sum ("ap"), Output 5
  *
  */
-public class MapSum {
-   private Map <String, Integer> map = new HashMap<>();
+public class MapSumBruteForce implements MapSum {
+   private Map<String, Integer> map = new HashMap<> ();
 
    public Object insert (String key, Integer value){
       map.put (key, value);
+      return null;
    }
 
 
    public Integer sum (String prefix){
       int sum = 0;
-      for (Map.Entry entries = map.entry ()) {
-
+      for (Map.Entry<String, Integer> entry : map.entrySet ()) {
+         if(entry.getKey().startsWith(prefix)) {
+            sum += entry.getValue();
+         }
       }
+      return sum;
    }
 }
