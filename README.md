@@ -1,1 +1,2 @@
 a generic project
+test
